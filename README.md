@@ -1,1 +1,2 @@
 # website
+# directory structure
