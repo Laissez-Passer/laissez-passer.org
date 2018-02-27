@@ -1,0 +1,354 @@
+/**************************************************************************************************/
+/*This stylesheet was created for HTML 4.01 using CSS 3 (and older)
+/*Tested on Windows versions of Firefox 1.5-3.0, IE 6-7, Safari 3.2, Opera 9.2-9.6, and K-Meleon 1.5
+/*
+/*REPLACE "example.com" WITH YOUR OWN DOMAIN in the paged media styles near the bottom! (Search for "TODO".)
+/*
+/*1.0: Layout
+/*2.0: Paragraphs
+/*3.0: Lists
+/*4.0: Tables
+/*5.0: Miscellaneous
+/*6.0: Form Errors
+/*7.0: Media-Specific
+/**************************************************************************************************/
+
+
+/*******************/
+/*** 0.0: Fonts ***/
+/*******************/
+
+@font-face {
+    font-family: 'BebasNeue Regular';
+    src: url('BebasNeue Regular.ttf');
+}
+
+h1, h2, h3 { font-family: 'BebasNeue Regular', serif; }
+/*******************/
+/*** 1.0: Layout ***/
+/*******************/
+
+.break {
+    clear:both;
+    height:0;
+    overflow:hidden;
+}
+.clear { clear:both; }
+
+/*sometimes javascript has trouble setting elem.style.float, so you can set elem.className instead:*/
+.floatLeft { float:left !important; }
+.floatRight { float:right !important; }
+.floatNone { float:none !important; }
+
+/*Note: these don't work in IE at all; other browsers may have issues*/
+.table		{ display:table; }
+.tcaption	{ display:table-caption; }
+.tcolgroup	{ display:table-column-group; }
+.tcol		{ display:table-column; }
+.thead		{ display:table-header-group; }
+.tbody		{ display:table-row-group; }
+.tfoot		{ display:table-footer-group; }
+.tr			{ display:table-row; }
+.th, .td	{ display:table-cell; }
+
+.centerBlock {
+    display:table;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+body.fullHeight {
+    height:100%;
+    padding:0;
+    border-top:1px solid transparent; margin-top:-1px;	/*defeat Firefox bug*/
+}
+
+/***********************/
+/*** 2.0: Paragraphs ***/
+/***********************/
+
+/*indented paragraphs are usually used in books*/
+.indent p + p { margin-top:-1em; }	/*no space between the paragraphs*/
+.indent p, p.indent { text-indent:1.25em; }
+p.noIndent, .indent p:first-child, 
+.indent h1 + p, .indent h2 + p, .indent h3 + p, 
+.indent h4 + p, .indent h5 + p, .indent h6 + p {
+    text-indent:0;	/*if this is the first paragraph or it immediately follows a header, it shouldn't be indented*/
+}
+.indent p.indent { text-indent:1.25em; }
+
+/*hanging paragraphs/indents are usually used for bibliographies*/
+.hang p, p.hang { padding-left:1.25em; text-indent:-1.25em; }
+p.noHang { padding-left:0; text-indent:0; }
+
+/******************/
+/*** 3.0: Lists ***/
+/******************/
+
+ol.bullets { list-style-type:disc; }
+ol.bullets ol { list-style-type:circle; }
+ol.bullets ol ol { list-style-type:square; }
+
+ul.inside, ol.inside {
+    padding-left:0;
+    list-style-position:inside;
+}
+
+ul.inline, ol.inline {
+    display:inline;
+    list-style-type:none;
+    padding-left:0;
+}
+ul.inline>li, ol.inline>li {
+    display:inline;
+}
+
+/*Adds delimiters for inline lists. For example (if the browser supports this class fully):
+/*  <ul class="inline delimit"><li>bread</li><li>milk</li><li>peanut butter</li></ul>
+/*becomes:
+/*  bread, milk, and peanut butter
+/*Note: these don't work in IE nor Opera 9.2; pseudo-element ::after and pseudo-classes :last-child and :nth-last-child()
+/*  aren't supported.
+/*Note: the "and" ones don't work in Firefox or K-Meleon; pseudo-class :nth-last-child() isn't supported.*/
+ul.inline.delimit>li:after, ol.inline.delimit>li:after { content:", "; }
+ul.inline.delimit>li::after, ol.inline.delimit>li::after { content:", "; }
+ul.inline.delimit>li:nth-last-child(2):after, ol.inline.delimit>li:nth-last-child(2):after { content:", and "; }
+ul.inline.delimit>li:nth-last-child(2)::after, ol.inline.delimit>li:nth-last-child(2)::after { content:", and "; }
+ul.inline.delimit>li:first-child:nth-last-child(2):after, ol.inline.delimit>li:first-child:nth-last-child(2):after {
+    content:" and ";
+}
+ul.inline.delimit>li:first-child:nth-last-child(2)::after, ol.inline.delimit>li:first-child:nth-last-child(2)::after {
+    content:" and ";
+}
+ul.inline.delimit>li:last-child:after, ol.inline.delimit>li:last-child:after { content:""; }
+ul.inline.delimit>li:last-child::after, ol.inline.delimit>li:last-child::after { content:""; }
+
+ol.code {
+    padding-left:2.75em;	/*allows room for 3 digits (font dependent, of course)*/
+    background-color:#E6E6E6;
+}
+ol.code>li {
+    font-family:"Envy Code R", "Courier New", Courier, monospace;
+    white-space:pre-wrap;
+}
+
+/*lines class allows the line numbers to be styled separately by using counters; can't with list-style-type:decimal*/
+/*Note: this doesn't work in IE; pseudo-element ::before isn't supported*/
+ol.lines {
+    padding-left:2em;
+    counter-reset:codeLine;
+    list-style-type:none;
+}
+ol.lines>li { position:relative; }
+ol.lines>li:before {
+    counter-increment:codeLine;
+    content:counter(codeLine) ". ";
+    white-space:pre;
+    display:inline-block;
+    min-width:2em;
+    margin-left:-2em;
+    text-align:right;	/*note: if content exceeds the min-width, it will appear as if left-aligned*/
+}
+ol.lines>li::before {
+    counter-increment:codeLine;
+    content:counter(codeLine) ". ";
+    white-space:pre;
+    display:inline-block;
+    min-width:2em;
+    margin-left:-2em;
+    text-align:right;	/*note: if content exceeds the min-width, it will appear as if left-aligned*/
+}
+
+ol.code.lines {
+    padding-left:2.75em;	/*allows room for 3 digits (font dependent, of course)*/
+}
+ol.code.lines>li:before {
+    min-width:2.5em;
+    margin-left:-2.5em;
+    font-weight:bold;
+}
+ol.code.lines>li::before {
+    min-width:2.5em;
+    margin-left:-2.5em;
+    font-weight:bold;
+}
+
+/*tree class displays the list like a file tree
+/*Note: this doesn't work properly in K-Meleon, Firefox 1.5-2.0, and IE 6 (IE 6 is fixed in its stylesheet)
+/*Note: IE doesn't support pseudo-class :last-child, so the bottom parts of the borders aren't hidden
+/*besides the root `ol`, the `tree` class on elements is only required for IE 6
+/*the HTML must be like this:
+Root
+<ol class="tree">
+<li><div class="tree"><span class="tree"></span>Item 1</div>
+<ol>
+<li><div class="tree"><span class="tree"></span>Item 1A</div></li>
+<li><div class="tree"><span class="tree"></span>Item 1B</div></li>
+</ol></li>
+<li><div class="tree"><span class="tree"></span>Item 2</div>
+<ol>
+<li><div class="tree"><span class="tree"></span>Item 2A</div></li>
+</ol></li>
+</ol>*/
+ol.tree, ol.tree ol {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    margin-left:1.5ex;			/*distance between left edge of div and border of sublist items*/
+}
+ol.tree li {
+    padding-left:1.55ex;		/*= A = width of item "bullet"*/
+    text-indent:-1.55ex;		/*= -A*/
+    border-left:1px solid #BBB;	/*= B = border width*/
+}
+ol.tree li:last-child {
+    border-left:0;
+}
+ol.tree li > div:first-child {
+    padding-top:0.2em;			/*= C*/
+    padding-right:0.4ex;
+    padding-bottom:0.2em;
+    padding-left:0;
+}
+ol.tree li:last-child > div:first-child {
+    margin-left:1px;			/*= B*/
+}
+ol.tree li > div:first-child > span:first-child {
+    display:inline-block;
+    vertical-align:top;
+    margin-top:-0.2em;			/*= -C*/
+    height:0.825em;				/*= C + (line-height)/2*/
+    border-bottom:1px solid #BBB;
+    width:1.55ex;				/*= A*/
+    border-left:0;
+    margin-right:0.4ex;			/*= D = div content's apparent padding-left*/
+}
+ol.tree li:last-child > div:first-child > span:first-child {
+    border-left:1px solid #BBB;	/*= B*/
+    margin-left:-1px;			/*= -B*/
+}
+
+/*******************/
+/*** 4.0: Tables ***/
+/*******************/
+
+table.basic td, table.basic th {
+    padding:0.25em 0.4em;
+    border-width:1px;
+}
+table.basic th {
+    font-weight:bold;
+    text-align:center;
+}
+
+/**************************/
+/*** 5.0: Miscellaneous ***/
+/**************************/
+
+pre.code { background-color:#E6E6E6; }
+
+.bold { font-weight:bold; }
+.italic { font-style:italic; }
+
+ins.update {
+    font-style:normal;
+    font-weight:bold;
+}
+
+abbr.define, acronym.define {
+    border-bottom:1px dotted #000;
+    border-bottom:1px dotted currentColor;
+}
+
+sup.footnote, sup.math, .math sup, sup.science, .science sup { vertical-align:super; }
+sup.ordinal, sup.mark, sup.currency, sup.fraction, sup.abbrev, sup.temperature { vertical-align:text-top; }
+sub.fraction, sub.abbrev { vertical-align:baseline; }
+sub.math, .math sub, sub.science, .science sub { vertical-align:sub; }
+
+/************************/
+/*** 6.0: Form Errors ***/
+/************************/
+
+label.error, .error label { color:#F00; }
+
+input[type="text"].error, .error input[type="text"], 
+input[type="password"].error, .error input[type="password"], 
+textarea.error, .error textarea, 
+select.error, .error select {
+    background-color:#FDD;
+}
+
+/***************************/
+/*** 7.0: Media-Specific ***/
+/***************************/
+/*audio, aural (deprecated), braille, embossed, handheld, print, projection, screen, speech, tty, tv*/
+
+@media handheld {
+
+    .indent p, p.indent { text-indent:1em; }
+    p.noIndent, .indent p:first-child, 
+    .indent h1 + p, .indent h2 + p, .indent h3 + p, 
+    .indent h4 + p, .indent h5 + p, .indent h6 + p {
+        text-indent:0;
+    }
+    .indent p.indent { text-indent:1em; }
+
+    .hang p, p.hang { padding-left:1; text-indent:-1em; }
+
+    img.decoration, img.ornamental { display:none; }
+
+}
+
+@media embossed, print, projection, tv {
+
+    .newPage { page-break-before:always; }
+
+}
+
+@media embossed, print {
+
+    .accessLink, .skipLink { display:none; }	/*to hide links like "skip to navigation"*/
+
+    /*The printHref class adds the href of a link to the printed page.*/
+    a.printHref:after, 
+    /*.printHref a:after, /*TODO: uncomment if you want to print all URIs (and relative URLs)*/
+    .printHref a[href^="http://"]:after, .printHref a[href^="https://"]:after {
+        /*Note: In general, the value of the href attribute is case-sensitive, so "HTTP://" (for example) may not match
+        these selectors. See http://www.w3.org/TR/1999/REC-html401-19991224/types.html#h-6.4 */
+        content:" (" attr(href) ")";
+        color:#888;
+        font-size:0.8em;
+    }
+    a.printHref::after, 
+    /*.printHref a::after, /*TODO: uncomment if you want to print all URIs (and relative URLs)*/
+    .printHref a[href^="http://"]::after, .printHref a[href^="https://"]::after {
+        /*Note: In general, the value of the href attribute is case-sensitive, so "HTTP://" (for example) may not match
+        these selectors. See http://www.w3.org/TR/1999/REC-html401-19991224/types.html#h-6.4 */
+        content:" (" attr(href) ")";
+        color:#888;
+        font-size:0.8em;
+    }
+    a.printHref[href^="/"]:after, .printHref a[href^="/"]:after {
+        content:" (http://example.com" attr(href) ")";	/*TODO: replace example.com with your domain*/
+        color:#888;
+        font-size:0.8em;
+    }
+    a.printHref[href^="/"]::after, .printHref a[href^="/"]::after {
+        content:" (http://example.com" attr(href) ")";	/*TODO: replace example.com with your domain*/
+        color:#888;
+        font-size:0.8em;
+    }
+    .printHref a[href^="#"]:after, 
+    .printHref a[href^="#"]::after, 
+    .printHref a.noPrintHref:after { content:""; }
+    .printHref a.noPrintHref::after { content:""; }
+
+}
+
+@media aural, speech {
+
+    .male { voice-family:male; }
+    .female { voice-family:female; }
+    .child { voice-family:child; }
+
+}
