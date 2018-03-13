@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- reset -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <!--  Navigation -->
+    <link rel="stylesheet" href="./assets/css/nav_subnav_intro.css">
+    <!-- main_content -->
+    <link rel="stylesheet" href="./assets/css/main.css">
+
+
+
+
+</head>
+
+<body>
+    <nl>
+        <label>Navigation</label>
+        <li href="/">Home</li>
+        <li>
+            <separator/>
+        </li>
+        <li href="prev">Previous</li>
+        <li href="..">Up</li>
+        <li href="next">Next</li>
+    </nl>
+    <h1>This is a top level heading</h1>
+
+    <p>... <a href="https://www.w3.org/TR/xhtml2/mod-structural.html">https://www.w3.org/TR/xhtml2/mod-structural.html</a></p>
+    <section>
+        <p>....</p>
+        <h>This is a second-level heading</h>
+        <p>....</p>
+        <h>This is another second-level heading</h>
+        <p>....</p>
+    </section>
+    <section>
+        <p>....</p>
+        <h>This is another second-level heading</h>
+        <p>....</p>
+        <section>
+            <h>This is a third-level heading</h>
+            <p>....</p>
+        </section>
+    </section>
+    <h1>top level heading</h1>
+    <section>
+        <h2>2nd level heading</h2>
+        <section>
+            <h3>3nd level heading</h3>
+            <section>
+                <h4>4th level heading</h4>
+                <section>
+                    <h5>5th level heading</h5>
+                    <section>
+                        <h6>6th level heading</h6>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <h1>This file</h1>
+    <h2>uses all</h2>
+    <h3>listed W3 school</h3>
+    <h4>html5 and CSS3 </h4>
+    <h5>properties</h5>
+    <h6>!!!!</h6>
+    <p>
+        This file's ideation began with the need to learn and improve. Feel free to inspect the file on G-chrome to take a look at specific tag examples or you can look at my github.
+    </p>
+
+
+    <abbr title="Hyper Text Markup Language"> HTML </abbr>
+
+    <address>
+		Street: 123 Coding Lane <br>
+		City: Los GigeByte <br>
+		Zip Code: 11100110000
+		USA
+	</address>
+
+    <p><b>FYI THIS ADDRESS DOES NOT EXIST</b></p>
+
+    <!-- The bdi tag stands for bi-directional isolation. isolating the username in this example -->
+    <!-- ul stands for unordered list and the li is a list tag. -->
+    <ul>
+        <li>User <bdi>hrefs</bdi>: 60 points</li>
+        <li>User <bdi>jdoe</bdi>: 80 points</li>
+        <li>User <bdi>إيان</bdi>: 90 points</li>
+    </ul>
+    <!-- The ol stands for ordered list. it will use numbers instead of bullet points -->
+    <ol>
+        <li>Sleep</li>
+        <li>eat</li>
+        <li>code</li>
+        <li>REPEAT</li>
+    </ol>
+
+    <!-- The bdo tag stands for bi-directional override. -->
+    <p><bdo dir="rtl">You might have a hard time reading this </bdo></p>
+
+    <!-- block quote tags are good citing quotable pieces of work -->
+    <blockquote cite='https://developer.mozilla.org/en-US/docs/Web/HTML'>
+        HyperText" refers to links that connect webpages to one another, either within a single website or between websites. Links are a fundamental aspect of the Web. By uploading content to the Internet and linking it to pages created by other people, you become an active participant in the World Wide Web.
+    </blockquote>
+
+    <!-- cite tag is used to cite other pieces of work -->
+    <p><cite>Cracking the Coding Interview</cite> By Gayle McDowell</p>
+    <!-- this is a code tag -->
+    <code>
+	 var color = 'blue
+		switch(color){
+			case'blue':
+			document.write("this is blue")
+			break;
+			case'red':
+			document.write('this is red')
+			default:
+			document.write('Color not found')
+ </code>
+    <!-- code tag to define -->
+    <p><dfn>PPPPP</dfn> Proper Planning Prevents Poor Performance</p>
+
+    <!-- use these tags when you want to emphasize words -->
+    <h1><em>With great power comes great responsibility</em></h1>
+
+    <!-- if you want to italicize text use this  -->
+
+    <p>the name of my favorite book is <i>Around the World in 80 days</i> by some author</p>
+
+    <mark>automatically highleted text with a mark tag...sweet!</mark>
+
+    <meter value="3" min="0" max="5">3 out of 5 this uses a meter tag to define a measurement</meter>
+    <br>
+    <meter value="0.9">90%</meter>
+
+
+    <pre>
+Text in a pre element
+is displayed in a fixed-width
+font, and it preserves
+both      spaces and
+line breaks
+</pre>
+
+    <progress value="22" max="100"></progress> Try it Yourself »
+
+    <p>Chase's Goal
+        <q>Create habits achieving supreme excellence</q>
+    </p>
+
+    <strong>i am strong</strong>
+
+    <p>This is how you used<sub>subscript</sub> tag.</p>
+    <p>This is how you use<sup>superscript</sup> tag.</p>
+    <!-- // The <template> tag holds its content hidden from the client.
+Content inside a <template> tag will not be rendered.
+The content can be visible and rendered later by using JavaScript. -->
+
+    <template>
+	<h2>Flower</h2>
+	<img src="img_dragon_fire.jpg">
+</template>
+
+    <p>The u tag <u>underlines</u> your text. Keep in mind you can use CSS for this</p>
+
+    <var>This is using the var tag to define a variable not quite sure of the use case of this yet</var>
+
+
+    <form action="/action_page.php">
+        Nick Name: <input type="text" name="FirstName" value="Black Panther"><br> Zodiac Sign: <input type="text" name="LastName" value=""><br> Biography: <textarea type="submit" value="Submit Your Form here"></textarea>
+
+        <textarea name="name" rows="8" cols="80">Workout</textarea>
+        <select>
+	<optgroup label="lowerbody">
+	<option value="legs">Squats</option>
+	<option value="abdominals">russian twist</option>
+	<optgroup label="upperbody">
+	<option value="arms">Bar Curls</option>
+	<option value="back">lat pull downs</option>
+</select>
+
+        <form>
+            <fieldset>
+                <legend>Personalia:</legend>
+                Name: <input type="text"><br> Email: <input type="text"><br> Date of birth: <input type="text">
+            </fieldset>
+        </form>
+
+        <input list="browsers">
+
+        <datalist id="browsers">
+	<option value="Internet Explorer">
+	<option value="Firefox">
+	<option value="Chrome">
+	<option value="Opera">
+	<option value="Safari">
+</datalist>
+
+        <iframe src="https://www.w3schools.com">
+	<p>Your browser does not support iframes.</p>
+</iframe>
+        <!--
+The <iframe> tag specifies an inline frame.
+An inline frame is used to embed another document within the current HTML document. -->
+        <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Ftctechcrunch2011.files.wordpress.com%2F2012%2F06%2Ftechstars-logo.jpg%3Fw%3D738&imgrefurl=https%3A%2F%2Ftechcrunch.com%2F2015%2F06%2F16%2Ftechstars-buys-up-global-the-non-profit-behind-startup-weekend%2F&docid=O8K0KhXLfgTlJM&tbnid=8h0pnvZB4M3MDM%3A&vet=10ahUKEwiO1oCt49XZAhUY3mMKHVnoCucQMwg4KAEwAQ..i&w=738&h=529&bih=736&biw=1440&q=techstars%20images&ved=0ahUKEwiO1oCt49XZAhUY3mMKHVnoCucQMwg4KAEwAQ&iact=mrc&uact=8" alt="photo of techstars">
+
+        <map name="planetmap">
+	<area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
+	<area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
+	<area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
+</map>
+
+        <p>Click on the sun or on one of the planets to watch it closer:</p>
+
+        <img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+        <map name="planetmap">
+	<area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+	<area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+	<area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+
+        <img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+        <map name="planetmap">
+ <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
+ <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
+ <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
+</map>
+
+        <canvas id="myCanvas"></canvas>
+
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0, 0, 80, 80);
+
+        </script>
+</body>
+
+</html>

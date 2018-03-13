@@ -54,6 +54,8 @@
     <!-- CSS
     —————————————————————————————————————————————————————  -->
     <link rel="stylesheet" href="https://laissez-passer.github.io/laissez-passer.org/assets/css/normalize.css">
+    <link rel="stylesheet" href="https://laissez-passer.github.io/laissez-passer.org/assets/css/nav_subnav_intro.css">
+
     <link rel="stylesheet" href="https://laissez-passer.github.io/laissez-passer.org/assets/css/skeleton.css">
     <link rel="stylesheet" href="https://laissez-passer.github.io/laissez-passer.org/assets/css/custom.css">
     <link rel="stylesheet" href="https://laissez-passer.github.io/laissez-passer.org/assets/css/custom2.css">
@@ -131,15 +133,33 @@
     <div class="navbar-spacer">...</div>
     <!-- Navigation
 ————————————————————————————————————————————————————— -->
-    <nav class="nav" tabindex="-1" onclick="this.focus()">
-        <div class="container">
-            <a class="pagename current" href="#">Your Site Name</a>
-            <a href="#">One</a>
-            <a href="#">Two</a>
-            <a href="#">Three</a>
+    <header class="cd-auto-hide-header">
+        <div class="logo"><a href="#0"><img src="./assets/images/lp_logo2.png" alt="Logo"></a>
         </div>
-    </nav>
-    <button class="btn-close btn btn-sm">×</button>
+
+        <nav class="cd-primary-nav">
+            <a href="#cd-navigation" class="nav-trigger">
+			<span>
+				<em aria-hidden="true"></em>
+				Menu
+			</span>
+		</a>
+            <!-- .nav-trigger -->
+
+            <ul id="cd-navigation">
+                <li><address><a href="tel:+ 19293895973">&#9742; +1.929.389.5973</a></address></li>
+                <li><a href="#0">The team</a></li>
+                <li><a href="#0">Our Products</a></li>
+                <li><a href="#0">Our Services</a></li>
+                <li><a href="#0">Our Services</a></li>
+                <li><a href="#0">Shopping tools</a></li>
+                <li><a href="#0">Contact Us</a></li>
+            </ul>
+        </nav>
+        <!-- .cd-primary-nav -->
+    </header>
+    <!-- .cd-auto-hide-header -->
+
 
 
     <!-- Primary Page Layout container

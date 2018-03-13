@@ -1,5 +1,5 @@
 /**********************************************************
-* 000ultimate.css best css ever 
+* main_content.css best css ever 
 **********************************************************/
 
 /*
@@ -12,6 +12,7 @@
 
 /* Table of contents
 ––––––––––––––––––––––––––––––––––––––––––––––––––
+- Reset
 - General page setup
 - Grid
 - Base Styles
@@ -32,9 +33,35 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .container {
+    box-sizing: border-box;
+    padding: 0 20px;
+    position: relative;
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+}
 
 
-    /*### License: [WTFPL](http://en.wikipedia.org/wiki/WTFPL)
+h {
+    font-family: sans-serif;
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+}
+
+section h {
+    font-size: 150%
+}
+
+/* A second-level heading */
+
+section section h {
+    font-size: 120%
+}
+
+/* A third-level heading */
+
+/*### License: [WTFPL](http://en.wikipedia.org/wiki/WTFPL)
 ```
            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
                    Version 2, December 2004
