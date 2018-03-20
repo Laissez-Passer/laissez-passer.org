@@ -3,7 +3,7 @@
 }
 
 .header {
-    margin-top: 6rem;
+    margin-top: 7rem;
     text-align: center;
 }
 
@@ -127,7 +127,7 @@
 
 @media (min-width: 550px) {
     .header {
-        margin-top: 3rem;
+        margin-top: 7rem;
     }
     .value-props {
         margin-top: 3rem;
