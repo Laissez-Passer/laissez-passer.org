@@ -1,14 +1,29 @@
 .container {
-    max-width: 800px;
+    max-width: 1000px;
 }
 
 .header {
-    margin-top: 7rem;
+    margin-top: 6rem;
     text-align: center;
+}
+
+.focus {
+    margin-top: 1rem;
+    background: #33C3F0;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    line-height: 30px;
+    margin-bottom: .75rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
 }
 
 .value-prop {
     margin-top: 1rem;
+
 }
 
 .value-props {
@@ -127,7 +142,7 @@
 
 @media (min-width: 550px) {
     .header {
-        margin-top: 7rem;
+        margin-top: 16rem;
     }
     .value-props {
         margin-top: 3rem;

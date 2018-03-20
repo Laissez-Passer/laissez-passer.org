@@ -30,9 +30,9 @@
 .container {
     position: relative;
     width: 100%;
-    max-width: 960px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 10px;
     box-sizing: border-box;
 }
 
@@ -201,14 +201,8 @@ body {
 }
 
 .header {
-    margin-top: 7rem;
+    margin-top: 7em;
     text-align: center;
-}
-
-.icon-img {
-    display: block;
-    text-align: center;
-    margin: 2.5rem auto 0;
 }
 
 /* Typography
@@ -234,7 +228,7 @@ h1 {
 
 h2 {
     font-size: 3.6rem;
-    line-height: 1.25;
+    line-height: 1;
     letter-spacing: -.1rem;
 }
 
@@ -287,7 +281,7 @@ h6 {
 }
 
 p {
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 
 
@@ -489,35 +483,8 @@ label > .label-body {
 }
 
 
-/* Lists
+/* Lists interfers wiht navigation
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-ul {
-    list-style: circle inside;
-}
-
-ol {
-    list-style: decimal inside;
-}
-
-ol,
-ul {
-    padding-left: 0;
-    margin-top: 0;
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-    margin: 1.5rem 0 1.5rem 3rem;
-    font-size: 90%;
-}
-
-li {
-    margin-bottom: 1rem;
-}
-
 
 /* Code
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
